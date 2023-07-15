@@ -1,0 +1,19 @@
+Question -> https://leetcode.com/problems/search-in-rotated-sorted-array/
+
+class Solution {
+    public int search(int[] nums, int target) {
+       int l=0;
+        int h=nums.length-1;
+        Map<Integer,Integer> fdfs=new HashMap<Integer,Integer>();
+       for(int i=0;i<nums.length;i++){
+           fdfs.put(nums[i],i);
+       } 
+       int b=0;
+       if(fdfs.containsKey(target)){
+         b=b+fdfs.get(target);
+          return b;
+       }
+       
+      return -1;
+    }
+}
